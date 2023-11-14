@@ -60,7 +60,6 @@ class TagViewSet(BaseRecipeAttrViewSet):
     queryset = Tag.objects.all()
 
 
-
 class IngredientViewSet(BaseRecipeAttrViewSet):
     """Manage ingredients in Database"""
 

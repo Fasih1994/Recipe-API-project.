@@ -377,7 +377,8 @@ class PrivateRecipeApiTest(TestCase):
 
     def test_update_recipe_assign_ingredient(self):
         """Test assigning an existing ingredient on recipe update"""
-        ingredient_salt = Ingredient.objects.create(user=self.user, name='Salt')
+        ingredient_salt = Ingredient.objects.create(user=self.user,
+                                                    name='Salt')
         recipe = create_recipe(user=self.user)
         recipe.ingredients.add(ingredient_salt)
 
