@@ -6,8 +6,6 @@ ENV PYTHONUNBUFFERED=1
 COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./scripts /scripts
-COPY ./app /app
-WORKDIR /app
 EXPOSE 8000
 
 ARG DEV=false
@@ -37,6 +35,9 @@ RUN chown -R django-user:django-user /vol
 RUN chmod -R 755 /vol && chmod -R +x /scripts
 
 ENV PATH="/scripts:/py/bin:$PATH"
+
+COPY ./app /app
+WORKDIR /app
 
 USER django-user
 
